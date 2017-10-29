@@ -8,9 +8,9 @@
 <hr>
 
 <ul>
-  <li><a [routerLink]="['/']">Home</a></li>
-  <li><a [routerLink]="['/page1']">Page 1</a></li>
-  <li><a [routerLink]="['/page2']">Page 2</a></li>
+  <li><a routerLinkActive="Active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Home</a></li>
+  <li><a routerLinkActive="Active" [routerLink]="['/page1']">Page 1</a></li>
+  <li><a routerLinkActive="Active" [routerLink]="['/page2']">Page 2</a></li>
   <li><a [routerLink]="['/','member','login']">test router</a></li>
 </ul>
 
