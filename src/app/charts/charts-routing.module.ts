@@ -4,13 +4,8 @@ import { FlotComponent } from './flot/flot.component';
 import { RadialComponent } from './radial/radial.component';
 
 const routes: Routes = [
-  {
-    path: 'charts',
-    children: [
-      { path: 'flot', component: FlotComponent },
-      { path: 'radial', component: RadialComponent }
-    ]
-  }
+  { path: 'flot', component: FlotComponent },
+  { path: 'radial', component: RadialComponent }
 ];
 
 @NgModule({

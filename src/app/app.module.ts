@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
-import { ChartsModule } from './charts/charts.module';
 import { ChartsRoutingModule } from './charts/charts-routing.module';
 
 
@@ -17,7 +16,6 @@ import { ChartsRoutingModule } from './charts/charts-routing.module';
   ],
   imports: [
     BrowserModule,
-    ChartsModule,
     AppRoutingModule
   ],
   providers: [],
