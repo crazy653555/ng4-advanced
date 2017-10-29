@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { initDashboard } from './initDashboard';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
