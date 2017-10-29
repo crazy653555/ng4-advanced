@@ -16,13 +16,23 @@ export class DashboardComponent implements OnInit {
   }
 
   goCards(type: number) {
-    console.log('goCards():' + type);
-    this.router.navigateByUrl('/cards/' + type);
+    //this.router.navigateByUrl('/cards/' + type + ';key1=Hellow;key2=World');
+    this.router.navigateByUrl('/cards/' + type + '?key1=Hello&key2=World');
   }
 
   goCards2(type: number) {
-    console.log('goCards2()');
-    this.router.navigate(['/cards', type]);
+    // this.router.navigate(['/cards', type,
+    //   {
+    //     key1: 'Hello',
+    //     key2: 'World'
+    //   }]);
+
+    this.router.navigate(['/cards', type], {
+      queryParams: {
+        key1: 'Hello',
+        key2: 'World'
+      }
+    });
   }
 
 }
