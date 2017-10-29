@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
 import { ChartsRoutingModule } from './charts/charts-routing.module';
+import { LayoutComponent } from './layout/layout.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    CardsComponent
+    CardsComponent,
+    LayoutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
