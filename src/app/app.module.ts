@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule}from'@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,8 @@ import { CardsComponent } from './cards/cards.component';
 import { ChartsRoutingModule } from './charts/charts-routing.module';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
+import { LoginGuard } from './login.guard';
+import { EnsureloginGuard } from './ensurelogin.guard';
 
 
 @NgModule({
@@ -20,9 +23,10 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [LoginGuard, EnsureloginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
