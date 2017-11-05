@@ -13,6 +13,7 @@ import { LoginGuard } from './login.guard';
 import { EnsureloginGuard } from './ensurelogin.guard';
 import { Form1Component } from './form1/form1.component';
 import { Form2Component } from './form2/form2.component';
+import { BlockComponent } from './block/block.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { Form2Component } from './form2/form2.component';
     LayoutComponent,
     LoginComponent,
     Form1Component,
-    Form2Component
+    Form2Component,
+    BlockComponent
 
   ],
   imports: [
