@@ -1,33 +1,39 @@
 <section>
   <div class="container-fluid">
     <h5 class="mt0">Classic form controls and custom variants</h5>
-    <pre>{{data | json}}</pre>
+    <pre>{{data | json}}
+form.value     = {{ form.value | json }}
+form.submitted = {{ form.submitted }}
+form.valid     = {{ form.valid}}
+form.invalid   = {{ form.invalid}}
+form.pristine  = {{ form.pristine}}
+form.dirty     = {{ form.dirty}}
+form.touched   = {{ form.touched}}
+form.untouched = {{ form.untouched}}
+form.errors    = {{ form.errors | json}}
+    </pre>
     <div class="card">
       <div class="card-body">
-        <form method="get" action="/" class="form-horizontal">
+        <form method="get" action="/" class="form-horizontal" (ngSubmit)="doSubmit(form)" #form="ngForm">
           <fieldset>
-            <div class="form-group" [class.has-error]="mTitle.touched && mTitle.invalid" >
+            <div class="form-group" [class.has-error]="mTitle.touched && mTitle.invalid">
               <label class="col-sm-2 control-label">Title</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control rounded" maxlength="20" required name="title" [(ngModel)]="data.title" #mTitle="ngModel">
+                <input type="text" class="form-control rounded" maxlength="20" required name="my_title" [(ngModel)]="data.title" #mTitle="ngModel">
                 <span *ngIf="mTitle['errors']?.required" class="help-block">請填寫 Subtitle
-                  </span>
-                <pre class="help-block">
-                    value = {{mTitle.value}}
-                    pristine = {{mTitle.pristine}}
-                    dirty = {{mTitle.dirty}}
-                    touched = {{mTitle.touched}}
-                    untouched = {{mTitle.untouched}}
-                    errors = {{mTitle.errors | json}}
+                </span>
+                <pre>
+data= {{data | json}}
                 </pre>
               </div>
             </div>
           </fieldset>
-          <fieldset>
+          <fieldset ngModelGroup="meatdata">
             <div class="form-group" [class.has-error]="mSubTitle.touched && mSubTitle.invalid">
               <label class="col-sm-2 control-label">SubTitle</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" minlength="3" maxlength="50" required name="subTitle" [(ngModel)]="data.subTitle" #mSubTitle="ngModel">
+                <input type="text" class="form-control" minlength="3" maxlength="50" required name="subTitle" [(ngModel)]="data.subTitle"
+                  #mSubTitle="ngModel">
                 <span *ngIf="mSubTitle['errors']?.required" class="help-block">請填寫 Subtitle
                 </span>
                 <pre class="help-block">
@@ -41,6 +47,9 @@
               </div>
             </div>
           </fieldset>
+
+          <input type="submit" value="送出表單">
+
           <fieldset>
             <div class="form-group">
               <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>
