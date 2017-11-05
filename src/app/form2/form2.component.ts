@@ -14,7 +14,7 @@ export class Form2Component implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      title:['hello',Validators.required],
+      title:['hello',[Validators.required,Validators.minLength(2)]],
       subtitle:["eason"]
     });
   }
