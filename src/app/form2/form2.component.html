@@ -15,15 +15,15 @@ forrrors    = {{ form.errors | json}}
       <div class="card-body">
         <form [formGroup]="form" method="get" action="/" class="form-horizontal">
           <fieldset>
-            <div class="form-group">
-              <label class="col-sm-2 control-label">Rounded Corners</label>
+            <div class="form-group" [class.has-error]="form.get('title').touched && form.get('title').invalid">
+              <label class="col-sm-2 control-label">Title</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control rounded" formControlName="title">
                 <pre>
 value     = {{form.controls['title'].value}}
 pristine  = {{form.get('title').pristine}}
 dirty     = {{form.get('title').dirty}}
-touched   = {{form.get('title').touched}}
+touched   = {{form.get('title').touched}}Ｏ
 untouched = {{form.get('title').untouched}}
 errors    = {{form.get('title').errors | json}}
 </pre>
@@ -31,8 +31,8 @@ errors    = {{form.get('title').errors | json}}
             </div>
           </fieldset>
           <fieldset>
-            <div class="form-group">
-              <label class="col-sm-2 control-label">With help</label>
+            <div class="form-group" [class.has-error]="form.get('title').touched && form.get('title').invalid">
+              <label class="col-sm-2 control-label">SubTitle</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" formControlName="subtitle">
                 <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>

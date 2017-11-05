@@ -9,6 +9,14 @@ import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 export class Form2Component implements OnInit {
 
   form: FormGroup;
+  data = {
+    title:'yyyyyyyyy',
+    subtitle:'xxxxxxxxx',
+    people:[
+      {name:'mary',tel:'0911111111',email:'aaa@gmail.com'},
+      {name:'mark',tel:'0922222222',email:'bbb@gmail.com'}
+    ]
+  };
 
   constructor(private fb: FormBuilder) { }
 
@@ -27,9 +35,10 @@ export class Form2Component implements OnInit {
           tel: '',
           email: ''
         })
-
       ])
     });
+
+    this.form.setValue(this.data);
   }
 
   addPerson() {
