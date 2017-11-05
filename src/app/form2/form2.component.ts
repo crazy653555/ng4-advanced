@@ -14,7 +14,9 @@ export class Form2Component implements OnInit {
     subtitle:'xxxxxxxxx',
     people:[
       {name:'mary',tel:'0911111111',email:'aaa@gmail.com'},
-      {name:'mark',tel:'0922222222',email:'bbb@gmail.com'}
+      {name:'mark',tel:'0922222222',email:'bbb@gmail.com'},
+      {name:'eason',tel:'0922222222',email:'bbb@gmail.com'},
+      {name:'avon',tel:'0922222222',email:'bbb@gmail.com'}
     ]
   };
 
@@ -25,7 +27,7 @@ export class Form2Component implements OnInit {
       title: ['hello', [Validators.required, Validators.minLength(2)]],
       subtitle: ["eason"],
       people: this.fb.array([
-        this.fb.group({Ｏ
+        this.fb.group({
           name: '',
           tel: '',
           email: ''
@@ -37,7 +39,8 @@ export class Form2Component implements OnInit {
         })
       ])
     });
-
+    this.form.setControl('people',
+    this.fb.array(this.data.people.map(p => this.fb.group(p))));
     this.form.setValue(this.data);
   }
 
