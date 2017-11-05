@@ -25,7 +25,7 @@ export class Form2Component implements OnInit {
       title: ['hello', [Validators.required, Validators.minLength(2)]],
       subtitle: ["eason"],
       people: this.fb.array([
-        this.fb.group({
+        this.fb.group({Ｏ
           name: '',
           tel: '',
           email: ''
